@@ -1,4 +1,4 @@
-# Template for Using @s4tk/
+# Template for Using @s4tk/extraction
 
 ## Overview
 

@@ -9,6 +9,7 @@
   "author": "frankkulak",
   "license": "MIT",
   "dependencies": {
-    "@s4tk/extraction": "^0.1.1"
+    "@s4tk/extraction": "^0.1.1",
+    "@s4tk/models": "^0.4.4"
   }
 }

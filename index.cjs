@@ -19,7 +19,7 @@ console.log("Beginning extract...");
 const start = performance.now();
 
 extractFiles(srcDirs, outDir, {
-  // eventListener, // uncomment this if you want detailed logs, but note that it WILL slow down your extract significantly
+  eventListener, // comment out to disable logs, it will speed up extraction
   extractSimData: true,
   extractTuning: true,
   namingConvention: "s4s",
@@ -33,5 +33,5 @@ extractFiles(srcDirs, outDir, {
 
 const finalSeconds = (performance.now() - start) / 1000;
 const mDisplay = Math.floor(finalSeconds / 60);
-const sDisplay = finalSeconds - (mDisplay * 60);
+const sDisplay = Math.floor(finalSeconds - (mDisplay * 60));
 console.log(`Extraction complete in ${mDisplay}m${sDisplay}s`);

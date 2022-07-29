@@ -1,15 +1,16 @@
 {
   "name": "extraction-template",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A sample project for running an extraction with @s4tk/extraction.",
-  "main": "index.js",
+  "main": "index.cjs",
   "scripts": {
-    "start": "node index.cjs"
+    "start": "node .",
+    "clean": "rm -rf ./out/*"
   },
   "author": "frankkulak",
   "license": "MIT",
   "dependencies": {
-    "@s4tk/extraction": "^0.1.2",
-    "@s4tk/models": "^0.4.4"
+    "@s4tk/extraction": "^0.1.3",
+    "@s4tk/models": "^0.6.2"
   }
 }

@@ -3,11 +3,14 @@ const { StringTableLocale } = require("@s4tk/models/enums");
 const { extractFiles } = require("@s4tk/extraction");
 const { eventListener } = require("./logging.cjs");
 
-// TODO: Ensure these path(s) are correct for your system
+// TODO: Ensure these path(s) are correct for your system, these ones are for my
+// MacBook. Windows paths should include the drive and use \\ instead of /.
+// Windows also does *not* have an equivalent to "The Sims 4 Packs", you should
+// only have two paths (one to your game, and one to SDX)
 const srcDirs = [
-  // "D:\\Origin\\The Sims 4", // windows
-  "/Applications/The Sims 4 Packs", // macOS
-  "/Applications/The Sims 4.app/Contents", // macOS
+  "/Applications/The Sims 4 Packs", // Packs not included in The Sims 4.app
+  "/Applications/The Sims 4.app/Contents", // Base Game and most packs
+  "/Users/YOURNAME/Documents/Electronic Arts/The Sims 4/content", // SDX
 ];
 
 // TODO: Ensure this will output where you want it. By default, it will be in a
@@ -33,5 +36,5 @@ extractFiles(srcDirs, outDir, {
 
 const finalSeconds = (performance.now() - start) / 1000;
 const mDisplay = Math.floor(finalSeconds / 60);
-const sDisplay = Math.floor(finalSeconds - (mDisplay * 60));
+const sDisplay = Math.floor(finalSeconds - mDisplay * 60);
 console.log(`Extraction complete in ${mDisplay}m${sDisplay}s`);

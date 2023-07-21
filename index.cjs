@@ -18,24 +18,26 @@ const srcDirs = [
 ];
 
 // TODO: Ensure this will output where you want it. By default, it will be in a
-// folder called "out" within this project
-const outDir = path.join(__dirname, "out");
+// folder called "extracted" within this project
+const outDir = path.join(__dirname, "extracted");
 
 // Just for logging/time keeping
 console.log("Beginning extract...");
 const start = performance.now();
 
 extractFiles(srcDirs, outDir, {
-  eventListener, // comment out to disable logs, it will speed up extraction
+  eventListener,
   extractSimData: true,
   extractTuning: true,
-  namingConvention: "s4s",
+  insertGroupComment: true,
+  namingConvention: "s4s", // if using S4TK for VS Code, you should use "name-only"
   restoreComments: true,
-  stringManifest: false,
+  stringManifest: "properties",
   targetLocale: StringTableLocale.English,
-  tuningManifest: false,
+  tuningManifest: "properties",
   usePrimarySubfolders: true,
   useSecondarySubfolders: true,
+  useTuningFoldersForSimData: true,
 });
 
 const finalSeconds = (performance.now() - start) / 1000;
